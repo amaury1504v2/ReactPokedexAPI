@@ -6,3 +6,30 @@
   padding-top: 4rem; /* pour éviter de cacher la carte */
   min-height: 100vh; /* ça fait que app prend toute la page */
 }
+
+.paginationButtons {
+  width: 80%;
+  height: 40px;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+.paginationButtons a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid white;
+  text-decoration: none;
+  color: white !important;
+}
+
+.paginationButtons a:hover {
+  color: #ef5350 !important;
+  background-color: white;
+}
+
+.paginationActive a {
+  color: #ef5350 !important;
+  background-color: white;
+}
