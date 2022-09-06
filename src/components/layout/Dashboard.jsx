@@ -7,7 +7,7 @@ import PokemonList from '../pokemon/PokemonList';
 export default class Dashboard extends Component {
   state = {
     url: "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0",
-    pokemon: null // on créé un objet pokemon null c'est où on va enregistrer le json
+    pokemon: [] // on créé un objet pokemon null c'est où on va enregistrer le json
   }
 
   async componentDidMount() {

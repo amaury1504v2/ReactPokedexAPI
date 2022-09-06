@@ -31,7 +31,9 @@ const StyledLink = styled(Link)`
     text-decoration: none;
     color: black;
     &focus: none;
-    &hover: none;
+    &:hover {
+        color: #ef5350;
+    }
     &visited: none;
     &link: none;
     &active: none {
