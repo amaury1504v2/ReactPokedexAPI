@@ -13,7 +13,8 @@ export default class PokemonList extends Component {
         pokemon: [], // on créé un objet (qui va devenir un tableau) pokemon null c'est où on va enregistrer le json
         pageNumber: 0,
         pokemonsPerPage: 16,
-        newData: []
+        newData: [],
+        userInput: ""
     };
 
     async componentDidMount() {
@@ -66,10 +67,11 @@ export default class PokemonList extends Component {
                     onDataFiltered={(newData) => {
                         this.setState({newData});
                     }}
+                    userInput={(userInput) => {this.setState({userInput})}}
                 />
                 <br />
                 {this.state.pokemon ? ( // s'il y a quelquechose dans le state
-                    this.state.newData === [] ? (
+                    this.state.userInput === "" ? (
                         <div className='row'>
                             {displayUsers}
                             <div style={{ display: 'flex', justifyContent: 'center'}}>

@@ -6,13 +6,14 @@ import './PokemonSearchBar.css';
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 
-export default function PokemonSearchBar({ placeholder, data, onDataFiltered }) {
+export default function PokemonSearchBar({ placeholder, data, onDataFiltered, userInput }) {
     const [filteredData, setFilteredData] = useState([]);
     const [wordEntered, setWordEntered] = useState("");
 
     const handleFilter = (e) => {
         const searchWord = e.target.value;
         setWordEntered(searchWord);
+        userInput(searchWord);
         const newFilter = data.filter(value => {
             return (value.name.toLowerCase().includes(searchWord.toLowerCase()));
         });
@@ -28,6 +29,7 @@ export default function PokemonSearchBar({ placeholder, data, onDataFiltered }) 
 
     const clearInput = (e) => {
         setWordEntered("");
+        userInput("");
         setFilteredData([]);
     }
 
