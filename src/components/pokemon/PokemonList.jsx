@@ -53,7 +53,9 @@ export default class PokemonList extends Component {
                 )
             });
 
-        const pageCount = Math.ceil(this.state.newData.length / this.state.pokemonsPerPage); // ceil() permet d'arrondir au supérieur
+        const pageCountPokemon = Math.ceil(this.state.pokemon.length / this.state.pokemonsPerPage); // ceil() permet d'arrondir au supérieur
+
+        const pageCountNewData = Math.ceil(this.state.newData.length / this.state.pokemonsPerPage);
 
         const changePage = ({selected}) => {
             this.setState({pageNumber: selected})
@@ -78,7 +80,7 @@ export default class PokemonList extends Component {
                                 <ReactPaginate 
                                     previousLabel={"previous"}
                                     nextLabel={"Next"}
-                                    pageCount={pageCount}
+                                    pageCount={pageCountPokemon}
                                     onPageChange={changePage}
                                     containerClassName={"paginationButtons"}
                                     previousLinkClassName={"previousButton"}
@@ -95,7 +97,7 @@ export default class PokemonList extends Component {
                                 <ReactPaginate 
                                     previousLabel={"previous"}
                                     nextLabel={"Next"}
-                                    pageCount={pageCount}
+                                    pageCount={pageCountNewData}
                                     onPageChange={changePage}
                                     containerClassName={"paginationButtons"}
                                     previousLinkClassName={"previousButton"}
